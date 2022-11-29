@@ -38,8 +38,8 @@
 
                 <div class="list-item">
                     <ul v-if="tasks.length > 0" >
-                        <li class="item" v-for =' (item, index) in tasks'> {{item.text}}
-                        <i @click="removeItem(index)" class="fa-solid fa-circle-xmark"></i></li>
+                        <li class="item" v-for =' (item, index) in tasks'  > {{item.text}}
+                        <i @click="removeItem(index)" class="fa-solid fa-circle-xmark" :class="{ 'check': tasks.done }"></i></li>
                     </ul>
                     <span v-else>
                        
