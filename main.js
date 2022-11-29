@@ -18,6 +18,7 @@ createApp({
 
         addItem(){
             if( this.newTask.length < 5 || this.newTask === ''){
+                this.error = true;
                  
             }
 
@@ -26,6 +27,15 @@ createApp({
                     text: this.newTask,
                 })
             }
+
+            this.newTask = '';
+
+            
+
+        },
+
+        removeItem(index){
+            this.tasks.splice(index, 1)
 
         }
     }

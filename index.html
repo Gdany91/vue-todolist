@@ -27,15 +27,19 @@
             <main class="d-flex flex-column align-items-center">
                 <div class="input-group input-group-lg">
                 
-                    <input type="text" placeholder="nuovo item" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" v-model="newTask ">
-                    <button type="button" class="btn btn-primary" @click="addItem">aggiungi</button>
+                    <input type="text" placeholder="nuovo item" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" v-model="newTask "@keyup.enter="addItem">
+                    <button type="button" class="btn btn-primary" @click="addItem" >aggiungi</button>
 
+                </div>
+
+                <div class="error" v-if="error">
+                    <small >devi inserire almeno 5 caratteri</small>
                 </div>
 
                 <div class="list-item">
                     <ul v-if="tasks.length > 0" >
                         <li class="item" v-for =' (item, index) in tasks'> {{item.text}}
-                        <i class="fa-solid fa-circle-xmark"></i></li>
+                        <i @click="removeItem(index)" class="fa-solid fa-circle-xmark"></i></li>
                     </ul>
                     <span v-else>
                        
