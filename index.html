@@ -33,11 +33,13 @@
                 </div>
 
                 <div class="list-item">
-                    <ul v-if="tasks.length > 0" class="">
+                    <ul v-if="tasks.length > 0" >
                         <li class="item" v-for =' (item, index) in tasks'> {{item.text}}
                         <i class="fa-solid fa-circle-xmark"></i></li>
                     </ul>
-                   
+                    <span v-else>
+                       
+                    </span>
                     
                 </div>
             </main>

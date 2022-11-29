@@ -22,7 +22,9 @@ createApp({
             }
 
             else {
-                this.tasks.unshift(this.newTask)
+                this.tasks.unshift ({
+                    text: this.newTask,
+                })
             }
 
         }
